@@ -1,4 +1,4 @@
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -23,7 +23,6 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Social Media Links */}
       <div className="flex justify-center space-x-8 mt-8">
         <a
           href="https://www.linkedin.com/in/apostolia-sofianopoulou/"

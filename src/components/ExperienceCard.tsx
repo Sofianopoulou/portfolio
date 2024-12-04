@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaMapMarkerAlt } from "react-icons/fa"; // Import the location icon
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 interface ExperienceProps {
   company: string;
