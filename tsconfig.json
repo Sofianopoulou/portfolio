@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6", // Specify ECMAScript target version
+    "lib": ["dom", "dom.iterable", "esnext"], // Include libraries for the environment
+    "allowJs": true, // Allow JavaScript files
+    "skipLibCheck": true, // Skip type checking for libraries
+    "esModuleInterop": true, // Allow default imports from CommonJS modules
+    "strict": true, // Enable all strict type-checking options
+    "forceConsistentCasingInFileNames": true, // Ensure consistent casing in imports
+    "module": "esnext", // Specify module code generation
+    "moduleResolution": "node", // Resolve modules in Node.js style
+    "isolatedModules": true, // Isolate transpiled files
+    "jsx": "react-jsx" // Use the new JSX transform
+  },
+  "include": ["src"], // Include the source directory
+  "exclude": ["node_modules", "build"] // Exclude unnecessary directories
+}
