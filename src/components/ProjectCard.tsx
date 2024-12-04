@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 interface ProjectProps {
   title: string;
@@ -8,7 +9,13 @@ interface ProjectProps {
 
 const ProjectCard: React.FC<ProjectProps> = ({ title, description, link }) => {
   return (
-    <div className="bg-background p-4 shadow-lg shadow-pink rounded-lg hover:shadow-xl transition text-white flex flex-col justify-between h-full">
+    <motion.div
+      className="bg-background p-4 shadow-lg shadow-pink rounded-lg hover:shadow-xl transition text-white flex flex-col justify-between h-full"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       <div>
         <h3 className="text-xl font-semibold">{title}</h3>
         <p>{description}</p>
@@ -20,7 +27,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, link }) => {
       >
         See live
       </a>
-    </div>
+    </motion.div>
   );
 };
 
