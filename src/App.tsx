@@ -7,7 +7,7 @@ import EducationalSection from "./components/EducationalSection";
 
 const App = () => {
   return (
-    <div className="font-pridi font-light bg-background">
+    <div className="font-pridi font-light bg-background overflow-x-hidden">
       <Header />
       <main className="pt-20">
         <MainSection />
