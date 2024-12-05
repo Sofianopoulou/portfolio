@@ -6,7 +6,7 @@ const ProjectsSection = () => {
     <section id="projects" className="py-20">
       <div className="px-4 md:px-12 lg:px-20">
         <motion.h2
-          className="text-3xl text-center mb-10 text-white font-semibold"
+          className="text-3xl text-center mb-10 font-semibold"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}

@@ -31,7 +31,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: true }}
     >
-      <div className="bg-background text-white p-4 shadow-lg shadow-light-blue rounded-lg hover:shadow-xl transition">
+      <div className="p-4 shadow-lg shadow-light-blue rounded-lg hover:shadow-xl transition">
         <div
           className="flex justify-between items-center cursor-pointer"
           onClick={toggleExpand}

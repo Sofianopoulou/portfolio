@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const MainSection = () => {
   return (
-    <section id="main" className="relative text-white py-20">
+    <section id="main" className="relative py-20">
       <div className="absolute inset-0 opacity-40"></div>
       <div className="container mx-auto text-center relative z-10 px-4 sm:px-6 lg:px-12">
         <motion.div

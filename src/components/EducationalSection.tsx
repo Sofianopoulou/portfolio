@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 
 const EducationalSection = () => {
   return (
-    <section id="education" className="py-20 bg-gray-200">
+    <section id="education" className="py-20">
       <div className="px-4 md:px-12 lg:px-20">
         <motion.h2
-          className="text-3xl text-center mb-10 text-white font-semibold"
+          className="text-3xl text-center mb-10 font-semibold"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
@@ -15,7 +15,7 @@ const EducationalSection = () => {
         </motion.h2>
 
         <motion.div
-          className="max-w-4xl mx-auto bg-background p-6 shadow-tirquoise shadow-lg rounded-lg hover:shadow-xl transition text-white"
+          className="max-w-4xl mx-auto p-6 shadow-tirquoise shadow-lg rounded-lg hover:shadow-xl transition"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}

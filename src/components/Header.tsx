@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-transparent-background text-white p-4 z-50">
+    <header className="fixed top-0 left-0 w-full bg-transparent-background p-4 z-50">
       <nav className="flex justify-between items-center">
         <Link
           to="main"
@@ -28,7 +28,7 @@ const Header = () => {
         </div>
 
         <div
-          className={`flex flex-col md:flex-row md:space-x-4 md:ml-auto md:static absolute top-16 left-0 w-full md:w-auto md:bg-transparent bg-gray-800 transition-transform transform ${
+          className={`flex flex-col md:flex-row md:space-x-4 md:ml-auto md:static absolute top-16 left-0 w-full md:w-auto transition-transform transform ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           } md:translate-x-0`}
         >
