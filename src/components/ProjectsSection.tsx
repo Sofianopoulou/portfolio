@@ -23,6 +23,19 @@ const ProjectsSection = () => {
             viewport={{ once: true }}
           >
             <ProjectCard
+              title="EcoOptimaAI Project"
+              description="AI-powered optimization tool for eco-friendly business solutions."
+              link="https://ecooptimaai.com/"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <ProjectCard
               title="Aiolia Beach Bar Website"
               description="React-based web application designed to provide an engaging and informative online presence for Aiolia Beach Bar."
               link="https://aiolia.gr/"

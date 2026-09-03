@@ -5,69 +5,106 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const closeMenu = () => setIsMenuOpen(false);
+
+  const navLinks = [
+    { name: "Projects", to: "projects" },
+    { name: "Experience", to: "experience" },
+    { name: "Education", to: "education" },
+    { name: "Contact", to: "contact" },
+  ];
 
   return (
     <header className="fixed top-0 left-0 w-full bg-transparent-background p-4 z-50">
-      <nav className="flex justify-between items-center">
+      <nav className="relative flex justify-between items-center">
+        {/* Logo / Home */}
         <Link
           to="main"
           smooth={true}
           duration={800}
           className="cursor-pointer text-lg font-bold"
+          onClick={closeMenu}
         >
           My Portfolio
         </Link>
 
-        <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-2xl">
-            {isMenuOpen ? <FaTimes /> : <FaBars />}
-          </button>
+        {/* Desktop navigation */}
+        <div className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              smooth={true}
+              duration={800}
+              className="cursor-pointer hover:text-light-blue transition-colors duration-200"
+            >
+              {link.name}
+            </Link>
+          ))}
         </div>
 
-        <div
-          className={`flex flex-col md:flex-row md:space-x-4 md:ml-auto md:static absolute top-16 left-0 w-full md:w-auto transition-transform transform ${
-            isMenuOpen ? "translate-x-0" : "-translate-x-full"
-          } md:translate-x-0`}
+        {/* Mobile menu button */}
+        <button
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+          className="md:hidden text-2xl p-2"
+          aria-label={
+            isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
+          aria-expanded={isMenuOpen}
         >
-          <Link
-            to="projects"
-            smooth={true}
-            duration={800}
-            className="cursor-pointer hover:text-light-blue p-4 md:p-0"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Projects
-          </Link>
-          <Link
-            to="experience"
-            smooth={true}
-            duration={800}
-            className="cursor-pointer hover:text-light-blue p-4 md:p-0"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Experience
-          </Link>
-          <Link
-            to="education"
-            smooth={true}
-            duration={800}
-            className="cursor-pointer hover:text-light-blue p-4 md:p-0"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Education
-          </Link>
-          <Link
-            to="contact"
-            smooth={true}
-            duration={800}
-            className="cursor-pointer hover:text-light-blue p-4 md:p-0"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Contact
-          </Link>
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        {/* Mobile navigation */}
+        <div
+          className={`
+            md:hidden
+            absolute
+            top-full
+            right-0
+            mt-3
+            w-52
+            rounded-xl
+            bg-black/90
+            backdrop-blur-md
+            shadow-xl
+            border
+            border-white/10
+            overflow-hidden
+            origin-top-right
+            transition-all
+            duration-300
+            ease-out
+            ${
+              isMenuOpen
+                ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+                : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+            }
+          `}
+        >
+          <div className="flex flex-col py-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                smooth={true}
+                duration={800}
+                onClick={closeMenu}
+                className="
+                  cursor-pointer
+                  px-5
+                  py-3
+                  text-right
+                  hover:text-light-blue
+                  hover:bg-white/5
+                  transition-colors
+                  duration-200
+                "
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </nav>
     </header>
