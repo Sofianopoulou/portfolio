@@ -2,3 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap");
+
+:root,
+.app-shell[data-theme="dark"] {
+  color-scheme: dark;
+  --color-background: #1a181d;
+  --color-header-background: rgba(26, 24, 29, 0.82);
+  --color-menu-background: rgba(12, 11, 14, 0.96);
+  --color-menu-border: rgba(255, 255, 255, 0.1);
+  --color-menu-hover: rgba(255, 255, 255, 0.05);
+  --color-text: #ffffff;
+  --color-pink: #ff00c1;
+  --color-purple: #9b00ff;
+  --color-blue: #4900ff;
+  --color-light-blue: #00b8ff;
+  --color-turquoise: #00d7d1;
+}
+
+.app-shell[data-theme="light"] {
+  color-scheme: light;
+  --color-background: #f8f7fb;
+  --color-header-background: rgba(248, 247, 251, 0.88);
+  --color-menu-background: rgba(255, 255, 255, 0.98);
+  --color-menu-border: rgba(35, 30, 44, 0.12);
+  --color-menu-hover: rgba(35, 30, 44, 0.06);
+  --color-text: #282431;
+  --color-pink: #c0008f;
+  --color-purple: #7618bd;
+  --color-blue: #4030b5;
+  --color-light-blue: #087ca8;
+  --color-turquoise: #087c78;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 300ms ease, color 300ms ease;
+}

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 interface ProjectProps {
   title: string;
   description: string;
-  link: string;
+  link?: string;
 }
 
 const ProjectCard: React.FC<ProjectProps> = ({ title, description, link }) => {
@@ -20,14 +20,16 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, link }) => {
         <h3 className="text-xl font-semibold">{title}</h3>
         <p>{description}</p>
       </div>
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-4 px-5 py-1 text-lg font-semibold text-background bg-pink rounded-full hover:bg-pink-600 hover:scale-105 transition-all duration-300 ease-in-out transform self-start"
-      >
-        See live
-      </a>
+      {link && (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 px-5 py-1 text-lg font-semibold text-background bg-pink rounded-full hover:brightness-110 hover:scale-105 transition-all duration-300 ease-in-out transform self-start"
+        >
+          See live
+        </a>
+      )}
     </motion.div>
   );
 };

@@ -51,7 +51,6 @@ const ProjectsSection = () => {
             <ProjectCard
               title="ELLP App"
               description="React Native-based mobile application designed to provide a convenient way to access ELLP membership benefits, including discounts, events and special offers."
-              link="#"
             />
           </motion.div>
         </div>

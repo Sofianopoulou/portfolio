@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaMoon, FaSun, FaTimes } from "react-icons/fa";
 
-const Header = () => {
+const Header = ({
+  theme,
+  onToggleTheme,
+}: {
+  theme: "dark" | "light";
+  onToggleTheme: () => void;
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const closeMenu = () => setIsMenuOpen(false);
@@ -43,6 +49,16 @@ const Header = () => {
           ))}
         </div>
 
+        <button
+          type="button"
+          onClick={onToggleTheme}
+          className="ml-auto p-2 text-xl hover:text-light-blue transition-colors duration-200 md:ml-0"
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+          title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+        >
+          {theme === "dark" ? <FaSun /> : <FaMoon />}
+        </button>
+
         {/* Mobile menu button */}
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -65,11 +81,11 @@ const Header = () => {
             mt-3
             w-52
             rounded-xl
-            bg-black/90
+            bg-menu-background
             backdrop-blur-md
             shadow-xl
             border
-            border-white/10
+            border-menu-border
             overflow-hidden
             origin-top-right
             transition-all
@@ -96,7 +112,7 @@ const Header = () => {
                   py-3
                   text-right
                   hover:text-light-blue
-                  hover:bg-white/5
+                  hover:bg-menu-hover
                   transition-colors
                   duration-200
                 "
