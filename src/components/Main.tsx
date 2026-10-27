@@ -12,7 +12,7 @@ const MainSection = () => {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <img
-            src="/images/me.png"
+            src="/images/profile-picture.jpg"
             alt="Apostolia Maria Sofianopoulou"
             className="mx-auto rounded-full w-40 h-40 object-cover"
           />
